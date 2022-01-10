@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:ui_wallet_app/presentation/widgets/custom_icon_button.dart';
 
 import '../../../../../../core/config/size_config.dart';
+import '../../../../../widgets/custom_icon_button.dart';
 
 class CustomAppBar {
   const CustomAppBar({

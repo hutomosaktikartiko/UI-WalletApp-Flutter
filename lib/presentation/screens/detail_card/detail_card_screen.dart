@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_wallet_app/presentation/screens/detail_card/widgets/custom_app_bar.dart';
 
 import '../../../core/config/size_config.dart';
 import '../../../data/models/mock_card_model.dart';
@@ -36,6 +37,7 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
         ),
       ),
       child: Scaffold(
+        appBar: CustomAppBar().build(context),
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: SizeConfig.defaultMargin),
@@ -44,37 +46,7 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Image.asset(
-                      "assets/icons/chevrolet_left_circle.png",
-                      height: 30,
-                    ),
-                  ),
-                  Text(
-                    "Card Detail",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Image.asset(
-                      "assets/icons/more_square.png",
-                      height: 30,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 42,
+                height: 30,
               ),
               CustomCard(
                 card: mockDetailCard,
