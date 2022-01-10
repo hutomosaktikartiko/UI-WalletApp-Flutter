@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_wallet_app/core/config/size_config.dart';
-import 'package:ui_wallet_app/data/models/mock_card_model.dart';
-import 'package:ui_wallet_app/presentation/screens/main/pages/home/widgets/custom_container.dart';
 
-import 'bottom_car.dart';
-import 'header_card.dart';
+import '../../../data/models/mock_card_model.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({
