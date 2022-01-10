@@ -36,10 +36,10 @@ class HistoryTransactionCard extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(11),
               ),
-              child: Image.asset(
-                "assets/icons/${transaction.iconName}",
-                height: 25,
-                width: 25,
+              child: ImageIcon(
+                AssetImage("assets/icons/${transaction.iconName}"),
+                size: 25,
+                color: Colors.white,
               ),
             ),
             Column(
