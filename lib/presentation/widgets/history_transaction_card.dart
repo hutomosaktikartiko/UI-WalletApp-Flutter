@@ -13,89 +13,79 @@ class HistoryTransactionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 15,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(right: 14),
-                padding: EdgeInsets.all(18),
-                decoration: BoxDecoration(
-                  color: transaction.color,
-                  boxShadow: [
-                    CustomBoxShadow(color: transaction.color!).build(),
-                  ],
-                  gradient: LinearGradient(
-                    colors: [
-                      transaction.color!.withOpacity(0.7),
-                      transaction.color!
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                  borderRadius: BorderRadius.circular(11),
-                ),
-                child: Image.asset(
-                  "assets/icons/${transaction.iconName}",
-                  height: 25,
-                  width: 25,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    transaction.title ?? "-",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    transaction.description ?? "-",
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF9CAEEE),
-                    ),
-                  ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(right: 14),
+              padding: EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: transaction.color,
+                boxShadow: [
+                  CustomBoxShadow(color: transaction.color!).build(),
                 ],
-              ),
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                transaction.priceDollar ?? "-",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFFED5C5C),
+                gradient: LinearGradient(
+                  colors: [
+                    transaction.color!.withOpacity(0.7),
+                    transaction.color!
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
+                borderRadius: BorderRadius.circular(11),
               ),
-              Text(
-                transaction.date ?? "-",
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF9CAEEE),
+              child: Image.asset(
+                "assets/icons/${transaction.iconName}",
+                height: 25,
+                width: 25,
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  transaction.title ?? "-",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
+                Text(
+                  transaction.description ?? "-",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF9CAEEE),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              transaction.priceDollar ?? "-",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFFED5C5C),
               ),
-            ],
-          )
-        ],
-      ),
+            ),
+            Text(
+              transaction.date ?? "-",
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF9CAEEE),
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
 }

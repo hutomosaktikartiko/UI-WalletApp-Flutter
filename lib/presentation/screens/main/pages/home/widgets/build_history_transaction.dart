@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/config/size_config.dart';
 import '../../../../../../data/models/mock_history_transaction_model.dart';
 import '../../../../../widgets/custom_text_view_all.dart';
-import 'custom_label.dart';
 import '../../../../../widgets/history_transaction_card.dart';
+import 'custom_label.dart';
 
 class BuildHistoryTransaction extends StatelessWidget {
   const BuildHistoryTransaction({
@@ -39,8 +39,18 @@ class BuildHistoryTransaction extends StatelessWidget {
                           ? 0
                           : 18,
                     ),
-                    child: HistoryTransactionCard(
-                      transaction: transaction,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 15,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: HistoryTransactionCard(
+                        transaction: transaction,
+                      ),
                     ),
                   ),
                 ),

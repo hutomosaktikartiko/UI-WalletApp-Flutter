@@ -5,6 +5,8 @@ import '../../../data/models/mock_card_model.dart';
 import '../../widgets/card/bottom_car.dart';
 import '../../widgets/card/custom_card.dart';
 import '../../widgets/card/header_card.dart';
+import '../../widgets/custom_text_view_all.dart';
+import '../main/pages/home/widgets/custom_label.dart';
 import 'pages/month/month_page.dart';
 import 'pages/week/week_page.dart';
 import 'widgets/custom_tab_item.dart';
@@ -125,7 +127,35 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
               const SizedBox(
                 height: 12,
               ),
-              pages[currentTab],
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 13, horizontal: 6),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(23),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 22),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomLabel(label: "History"),
+                          CustomTextViewAll(onTap: () {}),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 17,
+                    ),
+                    pages[currentTab],
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
