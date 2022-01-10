@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ui_wallet_app/core/config/size_config.dart';
-import 'package:ui_wallet_app/data/models/mock_card_model.dart';
-import 'package:ui_wallet_app/presentation/widgets/card/bottom_car.dart';
-import 'package:ui_wallet_app/presentation/widgets/card/custom_card.dart';
-import 'package:ui_wallet_app/presentation/widgets/card/header_card.dart';
-import 'package:ui_wallet_app/presentation/widgets/custom_icon_button.dart';
+
+import '../../../core/config/size_config.dart';
+import '../../../data/models/mock_card_model.dart';
+import '../../widgets/card/bottom_car.dart';
+import '../../widgets/card/custom_card.dart';
+import '../../widgets/card/header_card.dart';
+import 'pages/month/month_page.dart';
+import 'pages/week/week_page.dart';
+import 'widgets/custom_tab_item.dart';
 
 class DetailCardScreen extends StatefulWidget {
   const DetailCardScreen({Key? key}) : super(key: key);
@@ -14,6 +17,12 @@ class DetailCardScreen extends StatefulWidget {
 }
 
 class _DetailCardScreenState extends State<DetailCardScreen> {
+  int currentTab = 0;
+  List<Widget> pages = [
+    WeekPage(),
+    MonthPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -84,6 +93,39 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 13,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 6,
+                  vertical: 7,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  children: ["This Week", "This Month"]
+                      .asMap()
+                      .map(
+                        (key, value) => MapEntry(
+                          key,
+                          CustomTabItem(
+                            isSelected: key == currentTab,
+                            label: value,
+                            onTap: () => setState(() => currentTab = key),
+                          ),
+                        ),
+                      )
+                      .values
+                      .toList(),
+                ),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              pages[currentTab],
             ],
           ),
         ),
