@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../data/models/mock_history_transaction_model.dart';
-import '../../../../../widgets/custom_box_shadow.dart';
+import '../../data/models/mock_history_transaction_model.dart';
+import 'custom_box_shadow.dart';
 
 class HistoryTransactionCard extends StatelessWidget {
   const HistoryTransactionCard({

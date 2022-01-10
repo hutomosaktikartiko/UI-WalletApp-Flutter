@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:ui_wallet_app/presentation/widgets/custom_icon_button.dart';
 
 import '../../../../../../core/config/size_config.dart';
 
@@ -17,21 +18,16 @@ class CustomAppBar {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 37,
-              width: 37,
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: Color(0xFFF8F8F8),
-                  border: Border.all(
-                    color: Color(0xFFCFCFCF),
-                  ),
-                  borderRadius: BorderRadius.circular(6)),
-              child: ImageIcon(
-                AssetImage("assets/icons/filter.png"),
-                color: Color(0xFF6A86E3),
+            CustomIconButton(
+                borderColor: Color(0xFFCFCFCF),
+                backgroundColor: Color(0xFFF8F8F8),
+                icon: ImageIcon(
+                  AssetImage("assets/icons/filter.png"),
+                  color: Color(0xFF6A86E3),
+                ),
+                borderRadius: 12,
+                onTap: () {},
               ),
-            ),
             Text(
               "PitihPay",
               style: TextStyle(

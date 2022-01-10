@@ -4,7 +4,7 @@ import '../../../../../../core/config/size_config.dart';
 import '../../../../../../data/models/mock_history_transaction_model.dart';
 import '../../../../../widgets/custom_text_view_all.dart';
 import 'custom_label.dart';
-import 'history_transaction_card.dart';
+import '../../../../../widgets/history_transaction_card.dart';
 
 class BuildHistoryTransaction extends StatelessWidget {
   const BuildHistoryTransaction({
