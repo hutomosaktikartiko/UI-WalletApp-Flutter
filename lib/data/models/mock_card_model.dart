@@ -23,7 +23,7 @@ final List<MockCardModel> mockListCards = [
     balanceIdr: "Rp. 781.900",
     code: "11/26",
     color: Color(0xFFFC6F6F),
-    name: "Hutomo S"
+    name: "Hutomo S",
   ),
   MockCardModel(
     id: 2,
@@ -31,6 +31,15 @@ final List<MockCardModel> mockListCards = [
     balanceIdr: "Rp. 900.900",
     code: "11/26",
     color: Color(0xFF7690E8),
-    name: "Asril M"
+    name: "Asril M",
   ),
 ];
+
+final MockCardModel mockDetailCard = MockCardModel(
+  id: 1,
+  numberCensored: "**** **** **** 6751",
+  balanceIdr: "Rp. 781.900",
+  code: "11/26",
+  color: Colors.white.withOpacity(0.1),
+  name: "Hutomo S",
+);

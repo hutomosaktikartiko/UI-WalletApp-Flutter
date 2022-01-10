@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ui_wallet_app/core/config/size_config.dart';
+import 'package:ui_wallet_app/data/models/mock_card_model.dart';
+import 'package:ui_wallet_app/presentation/widgets/card/bottom_car.dart';
+import 'package:ui_wallet_app/presentation/widgets/card/custom_card.dart';
+import 'package:ui_wallet_app/presentation/widgets/card/header_card.dart';
 import 'package:ui_wallet_app/presentation/widgets/custom_icon_button.dart';
 
 class DetailCardScreen extends StatefulWidget {
@@ -57,7 +61,29 @@ class _DetailCardScreenState extends State<DetailCardScreen> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 42,
+              ),
+              CustomCard(
+                card: mockDetailCard,
+                borderRadius: 30,
+                width: SizeConfig.screenWidth,
+                borderColor: Colors.white,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 29),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      HeaderCard(card: mockDetailCard),
+                      BottomCard(
+                        card: mockDetailCard,
+                        logoUrl: "visa.png",
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

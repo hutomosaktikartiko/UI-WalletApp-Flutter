@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/config/size_config.dart';
 import '../../../../../../data/models/mock_card_model.dart';
-import 'custom_card.dart';
+import 'build_card.dart';
 import 'custom_label.dart';
 
 class BuildMyCard extends StatelessWidget {
@@ -38,7 +38,7 @@ class BuildMyCard extends StatelessWidget {
                             ? SizeConfig.defaultMargin
                             : 20,
                       ),
-                      child: CustomCard(
+                      child: BuildCard(
                         card: card,
                       ),
                     ),
