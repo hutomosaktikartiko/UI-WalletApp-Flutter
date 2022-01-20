@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'presentation/screens/main/main_screen.dart';
+import 'presentation/screens/on_boarding/on_boarding_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: MainScreen(),
+      home: OnBoardingScreen(),
     );
   }
 }
